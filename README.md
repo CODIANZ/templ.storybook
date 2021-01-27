@@ -1,4 +1,4 @@
-# Vue2 + composition-api + TypeScript + Storybook のテンプレート
+# Vue2 + composition-api + TypeScript + Storybook のテンプレート
 
 ## 既存の Vue プロジェクトに追加する流れ
 
@@ -71,7 +71,7 @@ storiesOf("サンプルコンポーネント", module)
   components: { SampleComponent },
   /* コンポーネントの入力プロパティを定義する */
   props: {
-    value: {
+    propval: {
       default: text("文字列値", "hello")
     }
   },
@@ -80,6 +80,6 @@ storiesOf("サンプルコンポーネント", module)
     gotevent: action("got the event")
   },
   /* レンダリングする templateを記述 */
-  template: `<SampleComponent :value="value" @sampleevent="gotevent" />`
+  template: `<SampleComponent :value="propval" @sampleevent="gotevent" />`
 }));
 ```
