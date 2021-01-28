@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from "@vue/composition-api";
 
 interface Props {
   value: string;
@@ -17,15 +17,15 @@ export default defineComponent<Props>({
   name: "SampleComponent",
   props: {
     value: {
-      type: String
-    }
+      type: String,
+    },
   },
   setup: (props, ctx) => {
     return {
       handleClick() {
         ctx.emit("sampleevent", props.value);
-      }
+      },
     };
-  }
-})
+  },
+});
 </script>
