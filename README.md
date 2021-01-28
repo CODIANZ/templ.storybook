@@ -16,7 +16,7 @@ $ npm i @storybook/addon-knobs --save-dev
 
 ### 3. Storybookの設定
 
-.storybook/main.js を編集する。
+#### 3-1 .storybook/main.js を編集する。
 ```js
 module.exports = {
   "stories": [
@@ -39,6 +39,19 @@ module.exports = {
 }
 ```
 
+#### 3-2 .storybook/preview.js を編集する。
+```js
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+}
+
+/* composition-api を使用する場合、ここでuse()する */
+import Vue from "vue";
+import VueCompositionApi from "@vue/composition-api";
+Vue.use(VueCompositionApi);
+```
+
+
 ## Storybook の実行
 
 ```sh
@@ -50,16 +63,11 @@ $ npm run storybook
 Storybook でコンポーネント一覧に表示させるために、storiesフォルダに ```(任意名称).stories.ts``` を作成する。
 
 ```ts
-/* composition-api を使用する場合、ここでuse()する */
-import Vue from "vue";
-import VueCompositionApi from '@vue/composition-api'
-Vue.use(VueCompositionApi)
-
 import { storiesOf } from "@storybook/vue";
-import { action } from '@storybook/addon-actions'
+import { action } from "@storybook/addon-actions";
 
 /* パラメータのtypeによって適宜importを追加する */
-import { text } from '@storybook/addon-knobs';
+import { text } from "@storybook/addon-knobs";
 
 /* 表示したいコンポーネントを importする */
 import SampleComponent from "../components/SampleComponent.vue";
