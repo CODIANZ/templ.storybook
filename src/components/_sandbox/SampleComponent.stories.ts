@@ -5,10 +5,10 @@ import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
 /* 表示したいコンポーネントを importする */
-import SampleComponent from "../components/SampleComponent.vue";
+import SampleComponent from "./SampleComponent.vue";
 
 /* ここから定義開始 */
-storiesOf("サンプルコンポーネント", module).add("default", () => ({
+storiesOf("sandbox/サンプルコンポーネント", module).add("default", () => ({
   /* 'template' で使用するコンポーネントを指定 */
   components: { SampleComponent },
   /* コンポーネントの入力プロパティを定義する */
